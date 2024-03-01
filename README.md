@@ -1,4 +1,4 @@
-# LAB - Class 11
+# LAB - Class 11, 12
 
 ## Project: CAPS
 
@@ -31,7 +31,7 @@ As a developer, I want to create an event driven system so that I can write code
 
 #### `.env` requirements
 
-- N/A
+- PORT=your-port-number
 
 #### How to initialize/run your application
 
@@ -42,7 +42,7 @@ As a developer, I want to create an event driven system so that I can write code
 
 - What was your key takeaway?
 
-  My key takeaway is an understanding of the basics of event driven programming and a stronger understanding of mock functions with jest.
+  My key takeaway is an understanding of the basics of event driven programming and a stronger understanding of mock functions with jest. Also, learning how to use Socket.io.
 
 - Events
 
@@ -50,7 +50,10 @@ As a developer, I want to create an event driven system so that I can write code
   - in-transit - package is in-transit
   - delivered - package is delivered
 
-- Pull request: <https://github.com/Jchips/caps/pull/1>
+- Pull requests:
+
+    <https://github.com/Jchips/caps/pull/1>
+    <https://github.com/Jchips/caps/pull/2>
 
 #### Tests
 
