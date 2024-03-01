@@ -22,10 +22,12 @@ And as developers, here are some of the development stories that are relevant to
 As a developer, I want to use industry standards for managing the state of each package.
 As a developer, I want to create an event driven system so that I can write code that happens in response to events, in real time.
 
+Lab 12: As a developer, I want to create network event driven system using Socket.io so that I can write code that responds to events originating from both servers and client applications.
+
 ### Links and Resources
 
 - [GitHub Actions ci/cd](https://github.com/Jchips/caps/actions)
-- [Pull Request](https://github.com/Jchips/caps/pull/1)
+- [Pull Request](https://github.com/Jchips/caps/pull/2)
 
 ### Setup
 
