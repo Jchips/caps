@@ -4,7 +4,8 @@ const socket = require('../socket');
 const pickUpHandler = require('./pickup-handler');
 const transitHandler = require('./transit-handler');
 
-socket.emit('join', '1-206-flowers');
+socket.emit('join', '1-800-flowers');
+socket.emit('join', 'acme-widgets');
 
 socket.on('pickup', (payload) => {
   setTimeout(() => {
@@ -17,3 +18,9 @@ socket.on('in-transit', (payload) => {
     transitHandler(payload, socket);
   }, 1000);
 });
+
+// socket.on('received', (payload) => {
+//   console.log('delivered notification received', payload);
+// });
+
+socket.emit('getAll', { clientId: 'driver', event: 'pickup' });

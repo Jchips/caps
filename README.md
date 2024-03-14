@@ -1,4 +1,4 @@
-# LAB - Class 11, 12
+# LAB - Class 11, 12, 13
 
 ## Project: CAPS
 
@@ -24,10 +24,23 @@ As a developer, I want to create an event driven system so that I can write code
 
 Lab 12: As a developer, I want to create network event driven system using Socket.io so that I can write code that responds to events originating from both servers and client applications.
 
+Lab 13: Simulate a delivery driver receiving a list of orders from a Queue and “scanning” package codes on delivery. Retailers will be able to see in their dashboard or log, a list of all packages delivered in real time. Should a delivery driver deliver any packages while the retailer is not connected to the dashboard, the vendor client should be guaranteed to receive “delivery” notifications from the Queue system.
+
+As a vendor, I want to “subscribe” to “delivered” notifications so that I know when my packages are delivered.
+As a vendor, I want to “catch up” on any “delivered” notifications that I might have missed so that I can see a complete log.
+As a driver, I want to “subscribe” to “pickup” notifications so that I know what packages to deliver.
+As a driver, I want to “catch up” on any “pickup” notifications I may have missed so that I can deliver everything.
+As a driver, I want a way to “scan” a delivery so that the vendors know when a package has been delivered.
+As a developer, I want to create a system of tracking who is subscribing to each event.
+As a developer, I want to place all inbound messages into a “queue” so that my application knows what events are to be delivered.
+As a developer, I want to create a system for communicating when events have been delivered and received by subscribers.
+As a developer, I want to delete messages from the queue after they’ve been received by a subscriber, so that I don’t re-send them.
+As a developer, I want to create a system for allowing subscribers to retrieve all undelivered messages in their queue.
+
 ### Links and Resources
 
 - [GitHub Actions ci/cd](https://github.com/Jchips/caps/actions)
-- [Pull Request](https://github.com/Jchips/caps/pull/2)
+- [Pull Request](https://github.com/Jchips/caps/pull/3)
 
 ### Setup
 
@@ -44,18 +57,21 @@ Lab 12: As a developer, I want to create network event driven system using Socke
 
 - What was your key takeaway?
 
-  My key takeaway is an understanding of the basics of event driven programming and a stronger understanding of mock functions with jest. Also, learning how to use Socket.io.
+  My key takeaway is an understanding of the basics of event driven programming and message queues with Socket.io.
 
 - Events
 
   - pickup - picked up package
   - in-transit - package is in-transit
   - delivered - package is delivered
+  - received - package was been received by vendor
+  - getAll - Get all missed notifications
 
 - Pull requests:
 
     <https://github.com/Jchips/caps/pull/1>
     <https://github.com/Jchips/caps/pull/2>
+    <https://github.com/Jchips/caps/pull/3>
 
 #### Tests
 
@@ -63,6 +79,7 @@ Lab 12: As a developer, I want to create network event driven system using Socke
 `npm test`
 - Any tests of note?
   - Makes sure the handlers are all doing what's expected.
+  - Queue can add, read, and remove items
 
 #### UML
 

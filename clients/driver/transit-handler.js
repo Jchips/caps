@@ -2,7 +2,7 @@
 
 const handler = (payload, socket) => {
   console.log(`DRIVER: delivered ${payload.orderId}`);
-  socket.emit('delivered', payload); // everyone who has socket.on with that specific event in there
+  socket.emit('delivered', { ...payload, event: 'delivered' }); // everyone who has socket.on with that specific event in there
 };
 
 module.exports = handler;
