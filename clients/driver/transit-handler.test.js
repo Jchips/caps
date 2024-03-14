@@ -16,6 +16,6 @@ describe('transit handler', () => {
     transitHandler(payload, socket);
 
     expect(console.log).toHaveBeenCalledWith('DRIVER: delivered order-id');
-    expect(socket.emit).toHaveBeenCalledWith('delivered', payload);
+    expect(socket.emit).toHaveBeenCalledWith('delivered', { ...payload, event: 'delivered' });
   });
 });

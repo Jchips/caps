@@ -12,7 +12,7 @@ console.log = jest.fn();
 
 describe('pickup handler', () => {
   test('Handler returns expected', () => {
-    let payload = { orderId: 'order-id' };
+    let payload = { order: { orderId: 'order-id' } };
     pickUpHandler(payload, socket);
 
     expect(console.log).toHaveBeenCalledWith('DRIVER: picked up order-id');

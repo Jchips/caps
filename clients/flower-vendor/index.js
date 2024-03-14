@@ -5,34 +5,30 @@ const socket = require('../socket');
 const vendorHandler = require('./vendor-handler');
 
 let chance = new Chance();
+let store = '1-800-flowers';
 
-socket.emit('join', '1-206-flowers');
+socket.emit('join', store);
 
 function Payload() {
-  this.storeName = '1-206-flowers';
+  this.storeName = store;
   this.orderId = chance.guid();
   this.customer = chance.name();
   this.address = chance.address();
 }
 
-// const payload = {
-//   store: storeName,
-//   orderId: chance.guid(),
-//   customer: chance.name(),
-//   address: chance.address(),
-// };
-
 setInterval(() => {
-  console.log('----------new package--------');
+  console.log('----------new package to 1-800-flowers--------');
   socket.emit('pickup', new Payload());
-}, 5000);
+}, 1000);
 
 socket.on('delivered', (payload) => {
   setTimeout(() => {
-    vendorHandler(payload);
+    vendorHandler(payload, socket);
   }, 1000);
 });
 
+socket.emit('getAll', { clientId: '1-800-flowers', event: 'delivered' });
+
 setTimeout(() => {
   process.exit();
-}, 20000);
+}, 60000);
